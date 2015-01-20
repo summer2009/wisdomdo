@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="我爱树莓派！ : I love Raspberry Pi！">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>我爱树莓派！</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+		<!--
+          <a id="forkme_banner" href="https://github.com/summer2009/wisdomdo">View on GitHub</a>
+		-->
+          <h1 id="project_title">我爱树莓派！</h1>
+          <h2 id="project_tagline">I love Raspberry Pi！</h2>
+
+           <!--  <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/summer2009/wisdomdo/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/summer2009/wisdomdo/tarball/master">Download this project as a tar.gz file</a>
+            </section> -->
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1><a id="wisdomdo" class="anchor" href="#wisdomdo" aria-hidden="true"><span class="octicon octicon-link"></span></a>wisdomdo</h1>
+		
+		<h3>RaspberryPi 下go语言的安装</h3>
+		
+		<p>本文讲述RasberryPi下Go语言 源码方式的安装，2015.01.20 日实践。</p>
+
+		<h6>1.克隆源码并checkout</h6>
+		<p>
+			 $ git clone https://github.com/golang/go.git
+			 <br />
+			 $ git checkout go1.4.1
+		 </p>
+		
+		<h6>2.设置环境变量</h6>
+		<p>
+			 $ sudo nano /etc/profile
+			<br>
+			将如下内容拷贝至 文件 最底下
+			<br>
+			export GOARM=5
+			<br>
+			export GOROOT=/home/pi/go
+			<br>
+			export GOARCH=arm
+			<br>
+			export GOOS=linux
+			<br>
+			export PATH=$PATH;/home/pi/go/bin/
+			<br>
+			
+			按ctrl ＋X，保存后退出 
+		</p>
+		
+		<h6>3. 编译源码</h6>
+		<p>
+			 $ cd go
+			 <br>
+			 $ cd src
+			 <br>
+			 $./all/bash
+			<br>
+			等待编译完成（漫长的等待），如下显示如下信息表示成功
+			<br>
+			If all goes well, it will finish by printing output like:
+			<br>
+			ALL TESTS PASSED
+			<br>
+			
+			---
+			<br>
+			Installed Go for linux/amd64 in /home/you/go.
+			<br>
+			Installed commands in /home/you/go/bin.
+			<br>
+			*** You need to add /home/you/go/bin to your $PATH. ***
+			<br>
+			
+		</p>
+		
+		<h6>4. 测试go是否安装成功</h6>
+		<p>
+			Create a file named hello.go and put the following program in it:
+			<br>
+			package main
+			<br>
+			import "fmt"
+			<br>
+			func main() {
+			<br>
+				fmt.Printf("hello, world\n")
+			<br>
+			}
+			<br>
+			
+			Then run it with the go tool:
+			<br>
+			$ go run hello.go
+			<br>
+			hello, world
+			<br>
+			
+			If you see the "hello, world" message then Go is installed correctly.
+		</p>
+		
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">我爱树莓派！ maintained by <a href="https://github.com/summer2009">summer2009</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
