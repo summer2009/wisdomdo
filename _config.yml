@@ -2,7 +2,7 @@ title: 我爱树莓派！
 description: I love Raspberry Pi！
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
 
 gems:
   - jekyll-mentions
